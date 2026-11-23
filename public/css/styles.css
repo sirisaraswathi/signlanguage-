@@ -1,0 +1,120 @@
+/* SignBridge Live - High-Fidelity Modern Theme with ESP32-CAM Support */
+
+:root {
+  --primary-blue: #2563eb;
+  --dark-navy: #070e27;
+  --sidebar-border: rgba(37, 99, 235, 0.2);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e8edfb;
+}
+
+/* Sidebar Styling */
+aside {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Video Card & Canvas Superimposition */
+#cameraViewportContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #020617;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+#cameraViewportContainer video,
+#cameraViewportContainer img,
+#cameraViewportContainer canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Only mirror for local webcam, not for ESP32-CAM */
+#cameraViewportContainer.mirrored video,
+#cameraViewportContainer.mirrored canvas.mirrored {
+  transform: scaleX(-1);
+}
+
+/* Quick Action Cards hover effect */
+.quick-action-card {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quick-action-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -4px rgba(37, 99, 235, 0.15);
+}
+
+/* Audio Playing Wave Pulse Animation */
+@keyframes audio-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(37, 99, 235, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+.speaking-pulse {
+  animation: audio-pulse 1.2s infinite;
+  background-color: #1d4ed8 !important;
+}
+
+/* Sign Sequence Chips */
+.sign-sequence-chip {
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(15, 23, 42, 0.75);
+  color: #cbd5e1;
+  backdrop-filter: blur(8px);
+}
+
+.sign-sequence-chip:hover {
+  background: rgba(37, 99, 235, 0.4);
+  color: #ffffff;
+  border-color: rgba(56, 189, 248, 0.5);
+  transform: translateY(-1px);
+}
+
+.sign-sequence-chip.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #60a5fa;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.8);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "isl-two-way-translator",
+  "version": "1.0.0",
+  "description": "Two-Way Indian Sign Language (ISL) to Text/Speech and Speech/Text to ISL Web Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "indian-sign-language",
+    "isl",
+    "mediapipe",
+    "computer-vision",
+    "speech-to-text",
+    "text-to-speech",
+    "accessibility"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}
